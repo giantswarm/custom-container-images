@@ -1,23 +1,18 @@
 version: 2.1
+orbs:
+  architect: giantswarm/architect@5.2.1
 
-# Define the jobs we want to run for this project
-jobs:
-  build-a:
-    docker:
-      - image: cimg/base:2023.03
-    steps:
-      - checkout
-      - run: echo "this is the build job for module-a"
-  test-a:
-    docker:
-      - image: cimg/base:2023.03
-    steps:
-      - checkout
-      - run: echo "this is the test job for module-a"
-
-# Orchestrate our job run sequence
 workflows:
-  build_and_test_a:
+  build-module-a:
     jobs:
-      - build-a
-      - test-a
+      - architect/push-to-registries:
+          context: architect
+          name: push-to-registries
+          image: giantswarm/laszlo-monorepo-module-a
+          dockerfile: ./module-a/Dockerfile
+          build-context: module-a
+          registries-data: |-
+            private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
+#          filters:
+#            tags:
+#              only: /^v.*/
