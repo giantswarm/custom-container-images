@@ -1,26 +1,19 @@
 version: 2.1
 orbs:
-  architect: giantswarm/architect@5.2.1
+  architect: giantswarm/architect@dev:2a9e477cc3e2fad44e79547b0ca8ce142e2f6fc4
 
 workflows:
   build-module-a:
     jobs:
-#      - run:
-#          name: Setup environment variables
-#          command: |-
-#            echo 'export ARCHITECT_MONOREPO="true"' >> "$BASH_ENV"
-#            echo 'export ARCHITECT_MONOREPO_MODULE_NAME="module-b"' >> "$BASH_ENV"
       - architect/push-to-registries:
           context: architect
           name: push-to-registries
+          tag-prefix: module-a
           image: giantswarm/laszlo-monorepo-module-a
           dockerfile: ./module-a/Dockerfile
           build-context: module-a
           registries-data: |-
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
-        environment:
-          ARCHITECT_MONOREPO: "true"
-          ARCHITECT_MONOREPO_MODULE_NAME: "module-b"
 #          filters:
 #            tags:
 #              only: /^v.*/
