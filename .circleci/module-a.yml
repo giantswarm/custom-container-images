@@ -5,6 +5,11 @@ orbs:
 workflows:
   build-module-a:
     jobs:
+#      - run:
+#          name: Setup environment variables
+#          command: |-
+#            echo 'export ARCHITECT_MONOREPO="true"' >> "$BASH_ENV"
+#            echo 'export ARCHITECT_MONOREPO_MODULE_NAME="module-b"' >> "$BASH_ENV"
       - architect/push-to-registries:
           context: architect
           name: push-to-registries
@@ -13,6 +18,9 @@ workflows:
           build-context: module-a
           registries-data: |-
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
+        environment:
+          ARCHITECT_MONOREPO: "true"
+          ARCHITECT_MONOREPO_MODULE_NAME: "module-b"
 #          filters:
 #            tags:
 #              only: /^v.*/
