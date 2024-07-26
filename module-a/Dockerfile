@@ -1,4 +1,4 @@
-FROM ubuntu:noble
+FROM --platform=linux/amd64 ubuntu:noble
 
 RUN echo "module-a" > /root/whoami.txt
 
