@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  architect: giantswarm/architect@dev:a406d4974c280831ad7f4cc92ad40067d877e312
+  architect: giantswarm/architect@dev:dd26da15f994f09c4d68eee0302959687c480dd6
 
 workflows:
   build-alpine-envsubst:
@@ -8,7 +8,7 @@ workflows:
       - architect/push-to-registries:
           context: architect
           name: push-to-registries
-          tag-prefix: alpine-envsubst
+          git-tag-prefix: alpine-envsubst
           tag-suffix: -envsubst
           image: giantswarm/laszlo-alpine
           dockerfile: ./alpine/envsubst.dockerfile
@@ -23,7 +23,7 @@ workflows:
       - architect/push-to-registries:
           context: architect
           name: push-to-registries
-          tag-prefix: alpine-yq
+          git-tag-prefix: alpine-yq
           tag-suffix: -yq
           image: giantswarm/laszlo-alpine
           dockerfile: ./alpine/yq.dockerfile
@@ -38,7 +38,7 @@ workflows:
       - architect/push-to-registries:
           context: architect
           name: push-to-registries
-          tag-prefix: alpine-giantswarm
+          git-tag-prefix: alpine-giantswarm
           tag-suffix: -giantswarm
           image: giantswarm/laszlo-alpine
           dockerfile: ./alpine/giantswarm.dockerfile

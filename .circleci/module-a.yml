@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  architect: giantswarm/architect@dev:a406d4974c280831ad7f4cc92ad40067d877e312
+  architect: giantswarm/architect@dev:dd26da15f994f09c4d68eee0302959687c480dd6
 
 workflows:
   build-module-a:
@@ -8,7 +8,7 @@ workflows:
       - architect/push-to-registries:
           context: architect
           name: push-to-registries
-          tag-prefix: module-a
+          git-tag-prefix: module-a
           image: giantswarm/laszlo-monorepo-module-a
           dockerfile: ./module-a/Dockerfile
           build-context: module-a
