@@ -1,0 +1,20 @@
+version: 2.1
+orbs:
+  architect: giantswarm/architect@dev:98db3dcc1d48af2c456900073072703a3a324e75
+
+workflows:
+  build-fluent-bit:
+    jobs:
+      - architect/push-to-registries:
+          context: architect
+          name: push-to-registries
+          git-tag-prefix: fluent-bit
+          tag-suffix: -aws-plugins
+          image: giantswarm/laszlo-fluent-bit
+          dockerfile: ./fluent-bit/Dockerfile
+          build-context: fluent-bit
+          registries-data: |-
+            private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
+#          filters:
+#            tags:
+#              only: /^v.*/

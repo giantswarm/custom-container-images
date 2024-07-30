@@ -48,3 +48,33 @@ workflows:
   #          filters:
   #            tags:
   #              only: /^v.*/
+  build-alpine-giantswarm-sysctl:
+    jobs:
+      - architect/push-to-registries:
+          context: architect
+          name: push-to-registries
+          git-tag-prefix: alpine-giantswarm-sysctl
+          tag-suffix: -giantswarm-sysctl
+          image: giantswarm/laszlo-alpine
+          dockerfile: ./alpine/sysctl.dockerfile
+          build-context: alpine
+          registries-data: |-
+            private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
+  #          filters:
+  #            tags:
+  #              only: /^v.*/
+  build-alpine-python3:
+    jobs:
+      - architect/push-to-registries:
+          context: architect
+          name: push-to-registries
+          git-tag-prefix: alpine-python3
+          tag-suffix: -python3
+          image: giantswarm/laszlo-alpine
+          dockerfile: ./alpine/python3.dockerfile
+          build-context: alpine
+          registries-data: |-
+            private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
+  #          filters:
+  #            tags:
+  #              only: /^v.*/
