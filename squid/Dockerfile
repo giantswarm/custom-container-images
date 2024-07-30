@@ -9,15 +9,3 @@ RUN chmod a+rwx /run && chmod a+rwx /var/log/squid && chmod a+rwx /var/spool/squ
 USER proxy
 
 CMD ["squid", "-N"]
-
-
-- image: ubuntu/squid
-  sha: 341611dd7eb3b2905e1d2e0cf1936606625dcab4085baf7cc4ae21c490670ac0
-  tag_or_pattern: "5.6-22.10_beta"
-  add_tag_suffix: giantswarm_gs1
-  dockerfile_extras:
-    -
-    -
-    -
-    -
-    -
