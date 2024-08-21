@@ -3,7 +3,7 @@ orbs:
   architect: giantswarm/architect@dev:98db3dcc1d48af2c456900073072703a3a324e75
 
 workflows:
-  build-alpinegit:
+  build-alpinegit-default:
     jobs:
       - architect/push-to-registries:
           context: architect
