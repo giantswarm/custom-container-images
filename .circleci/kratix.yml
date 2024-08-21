@@ -1,0 +1,14 @@
+version: 2.1
+orbs:
+  architect: giantswarm/architect@dev:98db3dcc1d48af2c456900073072703a3a324e75
+workflows:
+  build-kratix-default:
+    jobs:
+      - architect/push-to-registries:
+          context: architect
+          name: push-to-registries
+          git-tag-prefix: kratix-default
+          tag-suffix: -default
+          image: giantswarm/kratix
+          dockerfile: ./kratix/default.dockerfile
+          build-context: kratix
