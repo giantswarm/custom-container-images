@@ -10,7 +10,7 @@ workflows:
           name: push-to-registries
           git-tag-prefix: hyperkube
           image: giantswarm/laszlo-hyperkube
-          dockerfile: ./hyperkube/Dockerfile
+          dockerfile: ./hyperkube/default.dockerfile
           build-context: hyperkube
           registries-data: |-
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true

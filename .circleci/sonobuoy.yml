@@ -11,7 +11,7 @@ workflows:
           git-tag-prefix: sonobuoy
           tag-suffix: -alpine-giantswarm
           image: giantswarm/laszlo-sonobuoy
-          dockerfile: ./sonobuoy/Dockerfile
+          dockerfile: ./sonobuoy/default.dockerfile
           build-context: sonobuoy
           registries-data: |-
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true

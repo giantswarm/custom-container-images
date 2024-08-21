@@ -11,7 +11,7 @@ workflows:
           git-tag-prefix: fluent-bit
           tag-suffix: -aws-plugins
           image: giantswarm/laszlo-fluent-bit
-          dockerfile: ./fluent-bit/Dockerfile
+          dockerfile: ./fluent-bit/default.dockerfile
           build-context: fluent-bit
           registries-data: |-
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true

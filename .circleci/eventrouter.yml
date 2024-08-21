@@ -11,7 +11,7 @@ workflows:
           git-tag-prefix: eventrouter
           tag-suffix: -giantswarm
           image: giantswarm/laszlo-eventrouter
-          dockerfile: ./eventrouter/Dockerfile
+          dockerfile: ./eventrouter/default.dockerfile
           build-context: eventrouter
           registries-data: |-
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
