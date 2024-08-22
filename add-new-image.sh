@@ -24,7 +24,7 @@ function usage() {
   echo "Example usage:"
   echo ""
   echo "  $0 -o \"@giantswarm/team-honeybadger\" -i \"kratix\" -b \"gsoci.azurecr.io/giantswarm/kratix-base-cli:0.1.0\""
-  echo "  $0 -o \"@giantswarm/team-honeybadger\" -i \"alpine\" -f \"kubectl\" -b \"gsoci.azurecr.io/giantswarm/kratix-base-cli:0.1.0\""
+  echo "  $0 -o \"@giantswarm/team-honeybadger\" -i \"alpine\" -f \"kubectl\" -b \"alpine:3.16.2\""
 }
 
 # arguments
