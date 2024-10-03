@@ -15,3 +15,6 @@ workflows:
 #          modules: |
 #            /module-a
 #            /module-b
+          filters:
+            branches:
+              ignore: "main"
