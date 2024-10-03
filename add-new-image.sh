@@ -101,7 +101,7 @@ if [[ ! -f "${SCRIPT_DIR}/${pipeline_file}" ]]; then
   cat > "${SCRIPT_DIR}/${pipeline_file}" <<EOF
 version: 2.1
 orbs:
-  architect: giantswarm/architect@dev:98db3dcc1d48af2c456900073072703a3a324e75
+  architect: giantswarm/architect@5.8.0
 
 workflows: {}
 EOF
