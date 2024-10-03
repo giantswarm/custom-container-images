@@ -30,8 +30,6 @@ workflows:
           filters:
             tags:
               only: "/.*/"
-            branches:
-              ignore: "/.*/"
       - dynamic/continue:
           name: "Dynamic continuation - Branches"
           context: circleci
@@ -41,7 +39,7 @@ workflows:
             tags:
               ignore: "/.*/"
             branches:
-              only: "/.*/"
+              ignore: "main"
 #          modules: |
 #            /module-a
 #            /module-b
