@@ -18,6 +18,7 @@ orbs:
 #            else
 #              echo 'export GS_DYNAMIC_CONTINUE_FORCE_ALL="false"' >> "$BASH_ENV"
 
+
 workflows:
   development:
     when:
@@ -34,10 +35,10 @@ workflows:
           context: circleci
           auto-detect: true
           force-all: false
-  releases:
+  release:
     when:
       matches:
-        pattern: ".+"
+        pattern: "dummy"
         value: << pipeline.git.tag >>
     jobs:
       - dynamic/continue:
