@@ -20,6 +20,29 @@ orbs:
 
 
 workflows:
+  release:
+    when:
+      equal:
+        - "dummy"
+        - << pipeline.git.tag >>
+    #      matches:
+    #        pattern: "dummy"
+    #        value: << pipeline.git.tag >>
+    jobs:
+      - dynamic/continue:
+          name: "Dynamic continuation - Force all modules on tags"
+          context: circleci
+          auto-detect: true
+          force-all: true
+  #          modules: |
+  #            /module-a
+  #            /module-b
+  #          filters:
+  #            tags:
+  #              only: "/.*"
+  #            branches:
+  #              ignore: "main"
+
   development:
     when:
 #      equal:
@@ -35,25 +58,3 @@ workflows:
           context: circleci
           auto-detect: true
           force-all: false
-  release:
-    when:
-      equal:
-        - "dummy"
-        - << pipeline.git.tag >>
-#      matches:
-#        pattern: "dummy"
-#        value: << pipeline.git.tag >>
-    jobs:
-      - dynamic/continue:
-          name: "Dynamic continuation - Force all modules on tags"
-          context: circleci
-          auto-detect: true
-          force-all: true
-#          modules: |
-#            /module-a
-#            /module-b
-#          filters:
-#            tags:
-#              only: "/.*"
-#            branches:
-#              ignore: "main"
