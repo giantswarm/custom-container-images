@@ -16,5 +16,7 @@ workflows:
 #            /module-a
 #            /module-b
           filters:
+            tags:
+              only: "/.*/"
             branches:
               ignore: "main"
