@@ -10,10 +10,10 @@ workflows:
           name: push-to-registries
           git-tag-prefix: module-b
           image: giantswarm/laszlo-monorepo-module-b
-          dockerfile: ./module-a/default.dockerfile
+          dockerfile: ./module-b/default.dockerfile
           build-context: module-b
           registries-data: |-
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
-#          filters:
-#            tags:
-#              only: /^v.*/
+          filters:
+            tags:
+              only: /^module-b.*/
