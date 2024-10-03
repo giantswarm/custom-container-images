@@ -21,6 +21,9 @@ orbs:
 workflows:
   development:
     when:
+#      equal:
+#        - "main"
+#        - << pipeline.git.branch >>
       matches:
         pattern: ".+"
         value: << pipeline.git.branch >>
@@ -31,13 +34,10 @@ workflows:
           context: circleci
           auto-detect: true
           force-all: false
-          filters:
-            branches:
-              ignore: "main"
   releases:
     when:
       matches:
-        pattern: ".*/v.*"
+        pattern: ".+"
         value: << pipeline.git.tag >>
     jobs:
       - dynamic/continue:
