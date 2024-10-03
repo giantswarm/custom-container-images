@@ -23,23 +23,23 @@ workflows:
     jobs:
 #      - set-dynamic-continue-context
       - dynamic/continue:
-          name: "Dynamic continuation - Force all modules on tags"
-          context: circleci
-          auto-detect: true
-          force-all: true
-          filters:
-            tags:
-              only: "/.*/"
-      - dynamic/continue:
           name: "Dynamic continuation - Branches"
           context: circleci
           auto-detect: true
           force-all: false
           filters:
-            tags:
-              ignore: "/.*/"
             branches:
               ignore: "main"
+      - dynamic/continue:
+          name: "Dynamic continuation - Force all modules on tags"
+          context: circleci
+          auto-detect: true
+          force-all: true
+          requires:
+            - "Dynamic continuation - Branches"
+          filters:
+            tags:
+              only: "/.*/"
 #          modules: |
 #            /module-a
 #            /module-b
