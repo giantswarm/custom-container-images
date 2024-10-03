@@ -37,9 +37,12 @@ workflows:
           force-all: false
   release:
     when:
-      matches:
-        pattern: "dummy"
-        value: << pipeline.git.tag >>
+      equal:
+        - "dummy"
+        - << pipeline.git.tag >>
+#      matches:
+#        pattern: "dummy"
+#        value: << pipeline.git.tag >>
     jobs:
       - dynamic/continue:
           name: "Dynamic continuation - Force all modules on tags"
