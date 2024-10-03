@@ -2,21 +2,35 @@ version: '2.1'
 setup: true
 
 orbs:
+  architect: giantswarm/architect@5.8.0
   dynamic: bjd2385/dynamic-continuation@3.8.2
 
-jobs: {}
+jobs:
+  set-dynamic-continue-context:
+    executor: architect/architect
+    steps:
+      - checkout
+      - run:
+          name: "Determine force-all variable"
+          command: |
+            if [[ -n "$CIRCLE_TAG" ]]; then
+              echo 'export GS_DYNAMIC_CONTINUE_FORCE_ALL="true"' >> "$BASH_ENV"
+            else
+              echo 'export GS_DYNAMIC_CONTINUE_FORCE_ALL="false"' >> "$BASH_ENV"
 
 workflows:
   on-commit:
     jobs:
+      - set-dynamic-continue-context
       - dynamic/continue:
           context: circleci
           auto-detect: true
+          force-all: {{ .Environment.GS_DYNAMIC_CONTINUE_FORCE_ALL }}
 #          modules: |
 #            /module-a
 #            /module-b
-          filters:
-            tags:
-              only: "/.*/"
-            branches:
-              ignore: "main"
+#          filters:
+#            tags:
+#              only: "/.*"
+#            branches:
+#              ignore: "main"
