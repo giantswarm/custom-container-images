@@ -2,7 +2,7 @@ version: '2.1'
 setup: true
 
 orbs:
-#  architect: giantswarm/architect@5.8.0
+  #  architect: giantswarm/architect@5.8.0
   dynamic: bjd2385/dynamic-continuation@3.8.2
 
 #jobs:
@@ -19,9 +19,13 @@ orbs:
 #              echo 'export GS_DYNAMIC_CONTINUE_FORCE_ALL="false"' >> "$BASH_ENV"
 
 workflows:
-  on-commit:
+  development:
+    when:
+      matches:
+        pattern: ".+"
+        value: << pipeline.git.branch >>
     jobs:
-#      - set-dynamic-continue-context
+      #      - set-dynamic-continue-context
       - dynamic/continue:
           name: "Dynamic continuation - Branches"
           context: circleci
@@ -30,16 +34,17 @@ workflows:
           filters:
             branches:
               ignore: "main"
+  releases:
+    when:
+      matches:
+        pattern: ".*/v.*"
+        value: << pipeline.git.tag >>
+    jobs:
       - dynamic/continue:
           name: "Dynamic continuation - Force all modules on tags"
           context: circleci
           auto-detect: true
           force-all: true
-          requires:
-            - "Dynamic continuation - Branches"
-          filters:
-            tags:
-              only: "/.*/"
 #          modules: |
 #            /module-a
 #            /module-b
