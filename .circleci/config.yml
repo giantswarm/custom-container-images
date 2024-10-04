@@ -22,12 +22,13 @@ orbs:
 workflows:
   release:
     when:
-      equal:
-        - "dummy"
-        - << pipeline.git.tag >>
-    #      matches:
-    #        pattern: "dummy"
-    #        value: << pipeline.git.tag >>
+#      not:
+#        equal:
+#          - ""
+#          - << pipeline.git.tag >>
+          matches:
+            pattern: "/^.*/"
+            value: << pipeline.git.tag >>
     jobs:
       - dynamic/continue:
           name: "Dynamic continuation - Force all modules on tags"
