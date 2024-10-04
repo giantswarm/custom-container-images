@@ -2,21 +2,7 @@ version: '2.1'
 setup: true
 
 orbs:
-  #  architect: giantswarm/architect@5.8.0
   dynamic: bjd2385/dynamic-continuation@3.8.2
-
-#jobs:
-#  set-dynamic-continue-context:
-#    executor: architect/architect
-#    steps:
-#      - checkout
-#      - run:
-#          name: "Determine force-all variable"
-#          command: |
-#            if [[ -n "$CIRCLE_TAG" ]]; then
-#              echo 'export GS_DYNAMIC_CONTINUE_FORCE_ALL="true"' >> "$BASH_ENV"
-#            else
-#              echo 'export GS_DYNAMIC_CONTINUE_FORCE_ALL="false"' >> "$BASH_ENV"
 
 workflows:
   build:
@@ -39,44 +25,3 @@ workflows:
           filters:
             branches:
               ignore: "main"
-
-#workflows:
-#  release:
-#    when:
-##      not:
-##        equal:
-##          - ""
-##          - << pipeline.git.tag >>
-#          matches:
-#            pattern: "/^.*/"
-#            value: << pipeline.git.tag >>
-#    jobs:
-#      - dynamic/continue:
-#          name: "Dynamic continuation - Force all modules on tags"
-#          context: circleci
-#          auto-detect: true
-#          force-all: true
-#  #          modules: |
-#  #            /module-a
-#  #            /module-b
-#  #          filters:
-#  #            tags:
-#  #              only: "/.*/"
-#  #            branches:
-#  #              ignore: "main"
-#
-#  development:
-#    when:
-##      equal:
-##        - "main"
-##        - << pipeline.git.branch >>
-#      matches:
-#        pattern: ".+"
-#        value: << pipeline.git.branch >>
-#    jobs:
-#      #      - set-dynamic-continue-context
-#      - dynamic/continue:
-#          name: "Dynamic continuation - Branches"
-#          context: circleci
-#          auto-detect: true
-#          force-all: false
