@@ -18,44 +18,63 @@ orbs:
 #            else
 #              echo 'export GS_DYNAMIC_CONTINUE_FORCE_ALL="false"' >> "$BASH_ENV"
 
-
 workflows:
-  release:
-    when:
-#      not:
-#        equal:
-#          - ""
-#          - << pipeline.git.tag >>
-          matches:
-            pattern: "/^.*/"
-            value: << pipeline.git.tag >>
+  build:
     jobs:
       - dynamic/continue:
           name: "Dynamic continuation - Force all modules on tags"
           context: circleci
           auto-detect: true
           force-all: true
-  #          modules: |
-  #            /module-a
-  #            /module-b
-  #          filters:
-  #            tags:
-  #              only: "/.*"
-  #            branches:
-  #              ignore: "main"
-
-  development:
-    when:
-#      equal:
-#        - "main"
-#        - << pipeline.git.branch >>
-      matches:
-        pattern: ".+"
-        value: << pipeline.git.branch >>
-    jobs:
-      #      - set-dynamic-continue-context
+          filters:
+            tags:
+              only: "/^.*/"
       - dynamic/continue:
           name: "Dynamic continuation - Branches"
           context: circleci
           auto-detect: true
           force-all: false
+          filters:
+            branches:
+              ignore: "main"
+
+#workflows:
+#  release:
+#    when:
+##      not:
+##        equal:
+##          - ""
+##          - << pipeline.git.tag >>
+#          matches:
+#            pattern: "/^.*/"
+#            value: << pipeline.git.tag >>
+#    jobs:
+#      - dynamic/continue:
+#          name: "Dynamic continuation - Force all modules on tags"
+#          context: circleci
+#          auto-detect: true
+#          force-all: true
+#  #          modules: |
+#  #            /module-a
+#  #            /module-b
+#  #          filters:
+#  #            tags:
+#  #              only: "/.*"
+#  #            branches:
+#  #              ignore: "main"
+#
+#  development:
+#    when:
+##      equal:
+##        - "main"
+##        - << pipeline.git.branch >>
+#      matches:
+#        pattern: ".+"
+#        value: << pipeline.git.branch >>
+#    jobs:
+#      #      - set-dynamic-continue-context
+#      - dynamic/continue:
+#          name: "Dynamic continuation - Branches"
+#          context: circleci
+#          auto-detect: true
+#          force-all: false
