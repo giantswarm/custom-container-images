@@ -15,6 +15,8 @@ workflows:
           build-context: mysql
           registries-data: |-
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
-#          filters:
-#            tags:
-#              only: /^v.*/
+          filters:
+            tags:
+              only: "^mysql/v.*"
+            branches:
+              ignore: "main"

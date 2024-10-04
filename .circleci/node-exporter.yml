@@ -15,6 +15,8 @@ workflows:
           build-context: node-exporter
           registries-data: |-
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
-#          filters:
-#            tags:
-#              only: /^v.*/
+          filters:
+            tags:
+              only: "^node-exporter/v.*"
+            branches:
+              ignore: "main"

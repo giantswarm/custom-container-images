@@ -15,9 +15,11 @@ workflows:
           build-context: alpine
           registries-data: |-
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
-#          filters:
-#            tags:
-#              only: /^v.*/
+          filters:
+            tags:
+              only: "^alpine-envsubst/v.*"
+            branches:
+              ignore: "main"
   build-alpine-yq:
     jobs:
       - architect/push-to-registries:
@@ -30,9 +32,11 @@ workflows:
           build-context: alpine
           registries-data: |-
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
-  #          filters:
-  #            tags:
-  #              only: /^v.*/
+          filters:
+          tags:
+            only: "^alpine-yq/v.*"
+          branches:
+            ignore: "main"
   build-alpine-giantswarm:
     jobs:
       - architect/push-to-registries:
@@ -45,24 +49,28 @@ workflows:
           build-context: alpine
           registries-data: |-
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
-  #          filters:
-  #            tags:
-  #              only: /^v.*/
+          filters:
+            tags:
+              only: "^alpine-giantswarm/v.*"
+            branches:
+              ignore: "main"
   build-alpine-giantswarm-sysctl:
     jobs:
       - architect/push-to-registries:
           context: architect
           name: push-to-registries
-          git-tag-prefix: alpine-giantswarm-sysctl
+          git-tag-prefix: alpine-giantswarm
           tag-suffix: -giantswarm-sysctl
           image: giantswarm/laszlo-alpine
           dockerfile: ./alpine/sysctl.dockerfile
           build-context: alpine
           registries-data: |-
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
-  #          filters:
-  #            tags:
-  #              only: /^v.*/
+          filters:
+            tags:
+              only: "^alpine-giantswarm/v.*"
+            branches:
+              ignore: "main"
   build-alpine-python3:
     jobs:
       - architect/push-to-registries:
@@ -75,6 +83,8 @@ workflows:
           build-context: alpine
           registries-data: |-
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
-  #          filters:
-  #            tags:
-  #              only: /^v.*/
+          filters:
+            tags:
+              only: "^alpine-python3/v.*"
+            branches:
+              ignore: "main"
