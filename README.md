@@ -11,7 +11,7 @@ Each container image build will be done by `architect` and the `<upstream-image>
 
 For each `<upstream-image>` there must be a CircleCI config located at: `.circleci/<upstream-image>.yml`.
 
-With that file, for each flavour there must be a workflow defined under `.workflows`. The name of the workflow must
+Within that file, for each flavour there must be a workflow defined under `.workflows`. The name of the workflow must
 be unique within the whole repository, so we recommend following the convention: `build-<upstream-image>-<flavour>`.
 
 Each workflow should be an `architect` build. They all need the following filters to work correctly with the pipeline:
