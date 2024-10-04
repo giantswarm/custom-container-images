@@ -106,8 +106,10 @@ artifacts normal to `architect` on pull requests.
 ### Tag regex format
 
 Please note that the `filters.tags.only` must be in this format: `"/^<upstream-image>-<flavour>.*/"`. No more, no less!
-Because of bugs in CircleCI, if you for example omit the starting / ending `/`, or you include the `/` after
-the flavour, it will not parse the regex correctly and will skip the job.
+Because of bugs in CircleCI, if you for example omit the starting `/` or ending `/`, or you include the `/` after
+the flavour that is normally part of the tag, it will not parse the regex correctly and will skip the job. Not even escaping
+the `/` withing the regex under any combiation got it working. The docs claim that `java.util.regex.Pattern` is used,
+but I believe there is some wrong mangling on the string that is passed down and some corner cases are not working correctly.
 
 In case you have multiple tags stating with the same prefix, e.g. `nginx` and `nginx-gs`, then the `nginx-gs` tag
 will trigger the `nginx` one too because the regex will match it. But `architect` will handle it correctly. It is simply
