@@ -17,6 +17,6 @@ workflows:
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
-              only: "^fluent-bit/v.*"
+              only: "^fluent-bit.*"
             branches:
               ignore: "main"
