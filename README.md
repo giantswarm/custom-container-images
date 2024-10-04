@@ -119,4 +119,4 @@ According to CircleCI doc: https://circleci.com/docs/workflows/#executing-workfl
 circumstances of not triggering a build for each pushed tags if too many tags are pushed at the same time.
 
 The document mentions 3, so please try to push tags separately and possibly with small delay if multiple custom images
-are changes at the same time. ¯\_(ツ)_/¯
+are changes at the same time. ¯\\\_(ツ)_/¯
