@@ -109,6 +109,10 @@ Please note that the `filters.tags.only` must be in this format: `"/^<upstream-i
 Because of bugs in CircleCI, if you for example omit the starting / ending `/`, or you include the `/` after
 the flavour, it will not parse the regex correctly and will skip the job.
 
+In case you have multiple tags stating with the same prefix, e.g. `nginx` and `nginx-gs`, then the `nginx-gs` tag
+will trigger the `nginx` one too because the regex will match it. But `architect` will handle it correctly. It is simply
+that we end up with a useless artifact, but oh well.
+
 ### Tag pushing limitations
 
 According to CircleCI doc: https://circleci.com/docs/workflows/#executing-workflows-for-a-git-tag there can be
