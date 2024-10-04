@@ -61,7 +61,7 @@ workflows:
 #  #            /module-b
 #  #          filters:
 #  #            tags:
-#  #              only: "/.*"
+#  #              only: "/.*/"
 #  #            branches:
 #  #              ignore: "main"
 #

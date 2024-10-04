@@ -17,7 +17,7 @@ workflows:
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
-              only: "^alpine-envsubst.*"
+              only: "/^alpine-envsubst.*/"
             branches:
               ignore: "main"
   build-alpine-yq:
@@ -34,7 +34,7 @@ workflows:
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
-              only: "^alpine-yq.*"
+              only: "/^alpine-yq.*/"
             branches:
               ignore: "main"
   build-alpine-giantswarm:
@@ -51,7 +51,7 @@ workflows:
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
-              only: "^alpine-giantswarm.*"
+              only: "/^alpine-giantswarm.*/"
             branches:
               ignore: "main"
   build-alpine-giantswarm-sysctl:
@@ -68,7 +68,7 @@ workflows:
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
-              only: "^alpine-giantswarm.*"
+              only: "/^alpine-giantswarm.*/"
             branches:
               ignore: "main"
   build-alpine-python3:
@@ -85,6 +85,6 @@ workflows:
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
-              only: "^alpine-python3.*"
+              only: "/^alpine-python3.*/"
             branches:
               ignore: "main"
