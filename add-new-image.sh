@@ -116,6 +116,8 @@ yq -i ".workflows.build-${image}-${flavour}.jobs[0].architect/push-to-registries
 yq -i ".workflows.build-${image}-${flavour}.jobs[0].architect/push-to-registries.dockerfile = \"./${dockerfile}\"" "${SCRIPT_DIR}/${pipeline_file}"
 yq -i ".workflows.build-${image}-${flavour}.jobs[0].architect/push-to-registries.context = \"architect\"" "${SCRIPT_DIR}/${pipeline_file}"
 yq -i ".workflows.build-${image}-${flavour}.jobs[0].architect/push-to-registries.build-context = \"${image}\"" "${SCRIPT_DIR}/${pipeline_file}"
+yq -i ".workflows.build-${image}-${flavour}.jobs[0].architect/push-to-registries.filters.tags.only = \"/^${image}-${flavour}.*/\"" "${SCRIPT_DIR}/${pipeline_file}"
+yq -i ".workflows.build-${image}-${flavour}.jobs[0].architect/push-to-registries.filters.branches.ignore = \"main\"" "${SCRIPT_DIR}/${pipeline_file}"
 
 echo "✔ Added workflow to: ${pipeline_file}"
 
