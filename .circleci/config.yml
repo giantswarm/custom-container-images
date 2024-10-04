@@ -29,6 +29,8 @@ workflows:
           filters:
             tags:
               only: "/^.*/"
+            branches:
+              ignore: "/^.*/"
       - dynamic/continue:
           name: "Dynamic continuation - Branches"
           context: circleci
