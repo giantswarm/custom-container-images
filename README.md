@@ -4,10 +4,10 @@ This is a mono repository designed to build custom container images from upstrea
 
 Each folder within the repository is a module for a given upstream image that can contain multiple flavours of that image.
 
-When there are no flavours for the image, or simply there is only one, then that is called the default flavour.
+When there are no flavours for the image, thus there is simply only one, then that is called the default flavour.
 
 For each image flavour there must be a Dockerfile located at: `<upstream-image>/<flavour>.dockerfile`.
-Each container image build will be done by `architect` and the `<upstream-image>` will be used as context.
+Each container image build will be done by `architect` and the `<upstream-image>` folder will be used as context.
 
 For each `<upstream-image>` there must be a CircleCI config located at: `.circleci/<upstream-image>.yml`.
 
