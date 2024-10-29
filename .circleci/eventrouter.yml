@@ -10,11 +10,9 @@ workflows:
           name: push-to-registries
           git-tag-prefix: eventrouter
           tag-suffix: -giantswarm
-          image: giantswarm/laszlo-eventrouter
+          image: giantswarm/eventrouter
           dockerfile: ./eventrouter/default.dockerfile
           build-context: eventrouter
-          registries-data: |-
-            private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
               only: "/^eventrouter.*/"

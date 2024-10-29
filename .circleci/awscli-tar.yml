@@ -10,11 +10,9 @@ workflows:
           name: push-to-registries
           git-tag-prefix: awscli-tar
           tag-suffix: -giantswarm
-          image: giantswarm/laszlo-awscli-tar
+          image: giantswarm/awscli-tar
           dockerfile: ./awscli-tar/default.dockerfile
           build-context: awscli-tar
-          registries-data: |-
-            private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
               only: "/^awscli-tar.*/"

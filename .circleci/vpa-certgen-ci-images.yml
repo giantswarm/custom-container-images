@@ -10,11 +10,9 @@ workflows:
           name: push-to-registries
           git-tag-prefix: vpa-certgen-ci-images
           tag-suffix: -openssl
-          image: giantswarm/laszlo-vpa-certgen-ci-images
+          image: giantswarm/vpa-certgen-ci-images
           dockerfile: ./vpa-certgen-ci-images/default.dockerfile
           build-context: vpa-certgen-ci-images
-          registries-data: |-
-            private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
               only: "/^vpa-certgen-ci-images.*/"

@@ -10,11 +10,9 @@ workflows:
           name: push-to-registries
           git-tag-prefix: alpine-envsubst
           tag-suffix: -envsubst
-          image: giantswarm/laszlo-alpine
+          image: giantswarm/alpine
           dockerfile: ./alpine/envsubst.dockerfile
           build-context: alpine
-          registries-data: |-
-            private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
               only: "/^alpine-envsubst.*/"
@@ -27,11 +25,9 @@ workflows:
           name: push-to-registries
           git-tag-prefix: alpine-yq
           tag-suffix: -yq
-          image: giantswarm/laszlo-alpine
+          image: giantswarm/alpine
           dockerfile: ./alpine/yq.dockerfile
           build-context: alpine
-          registries-data: |-
-            private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
               only: "/^alpine-yq.*/"
@@ -44,11 +40,9 @@ workflows:
           name: push-to-registries
           git-tag-prefix: alpine-giantswarm
           tag-suffix: -giantswarm
-          image: giantswarm/laszlo-alpine
+          image: giantswarm/alpine
           dockerfile: ./alpine/giantswarm.dockerfile
           build-context: alpine
-          registries-data: |-
-            private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
               only: "/^alpine-giantswarm.*/"
@@ -61,11 +55,9 @@ workflows:
           name: push-to-registries
           git-tag-prefix: alpine-giantswarm
           tag-suffix: -giantswarm-sysctl
-          image: giantswarm/laszlo-alpine
+          image: giantswarm/alpine
           dockerfile: ./alpine/sysctl.dockerfile
           build-context: alpine
-          registries-data: |-
-            private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
               only: "/^alpine-giantswarm.*/"
@@ -78,11 +70,9 @@ workflows:
           name: push-to-registries
           git-tag-prefix: alpine-python3
           tag-suffix: -python3
-          image: giantswarm/laszlo-alpine
+          image: giantswarm/alpine
           dockerfile: ./alpine/python3.dockerfile
           build-context: alpine
-          registries-data: |-
-            private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
               only: "/^alpine-python3.*/"

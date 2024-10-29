@@ -9,11 +9,9 @@ workflows:
           context: architect
           name: push-to-registries
           git-tag-prefix: calicoctl
-          image: giantswarm/laszlo-calicoctl
+          image: giantswarm/calicoctl
           dockerfile: ./calicoctl/default.dockerfile
           build-context: calicoctl
-          registries-data: |-
-            private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
               only: "/^calicoctl.*/"

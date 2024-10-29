@@ -10,11 +10,9 @@ workflows:
           name: push-to-registries
           git-tag-prefix: mysql
           tag-suffix: -giantswarm
-          image: giantswarm/laszlo-mysql
+          image: giantswarm/mysql
           dockerfile: ./mysql/default.dockerfile
           build-context: mysql
-          registries-data: |-
-            private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
               only: "/^mysql.*/"

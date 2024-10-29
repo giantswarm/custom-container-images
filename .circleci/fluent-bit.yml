@@ -10,11 +10,9 @@ workflows:
           name: push-to-registries
           git-tag-prefix: fluent-bit
           tag-suffix: -aws-plugins
-          image: giantswarm/laszlo-fluent-bit
+          image: giantswarm/fluent-bit
           dockerfile: ./fluent-bit/default.dockerfile
           build-context: fluent-bit
-          registries-data: |-
-            private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
               only: "/^fluent-bit.*/"

@@ -9,11 +9,9 @@ workflows:
           context: architect
           name: push-to-registries
           git-tag-prefix: calico-crd-installer
-          image: giantswarm/laszlo-calico-crd-installer
+          image: giantswarm/calico-crd-installer
           dockerfile: ./calico-crd-installer/default.dockerfile
           build-context: calico-crd-installer
-          registries-data: |-
-            private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
               only: "/^calico-crd-installer.*/"
