@@ -3,19 +3,20 @@ orbs:
   architect: giantswarm/architect@5.8.0
 
 workflows:
-  build-calico-crd-installer-default:
+  build-awscli-tar-default:
     jobs:
       - architect/push-to-registries:
           context: architect
           name: push-to-registries
-          git-tag-prefix: calico-crd-installer
-          image: giantswarm/laszlo-calico-crd-installer
-          dockerfile: ./calico-crd-installer/default.dockerfile
-          build-context: calico-crd-installer
+          git-tag-prefix: awscli-tar
+          tag-suffix: -giantswarm
+          image: giantswarm/laszlo-awscli-tar
+          dockerfile: ./awscli-tar/default.dockerfile
+          build-context: awscli-tar
           registries-data: |-
             private gsociprivate.azurecr.io ACR_GSOCIPRIVATE_USERNAME ACR_GSOCIPRIVATE_PASSWORD true
           filters:
             tags:
-              only: "/^calico-crd-installer.*/"
+              only: "/^awscli-tar.*/"
             branches:
               ignore: "main"
