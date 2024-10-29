@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 quay.io/calico/kube-controllers:v3.27.4
+FROM --platform=linux/amd64 quay.io/calico/kube-controllers:v3.28.2
 
 FROM quay.io/giantswarm/crd-installer:0.2.2 AS installer
 
