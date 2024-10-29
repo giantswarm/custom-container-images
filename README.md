@@ -63,6 +63,10 @@ You must comply with the following tagging convention.
 The commit must be done on the squash merge commit that contains the change and follow the convention:
 `<upstream-image>-<flavour>/v<semantic-version>`.
 
+The semantic version must always contain `<major>.<minor>.<patch>` versions, even if the upstream image does not.
+It makes sense to follow upstream with the custom image tags, but they are GS custom images after all, and this is
+the versioning that we follow and support in our tooling.
+
 For the above `nginx` example to release `1.2.3` it must be: `nginx/v1.2.3`. So for `default` flavour you can omit
 the flavour.
 
