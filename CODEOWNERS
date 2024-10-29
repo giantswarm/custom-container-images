@@ -1,0 +1,8 @@
+.circleci/config.yml @giantswarm/team-honeybadger
+
+.gitignore @giantswarm/team-honeybadger
+README.md @giantswarm/team-honeybadger
+add-new-image.sh @giantswarm/team-honeybadger
+
+module-a @giantswarm/team-honeybadger
+module-b @giantswarm/team-honeybadger
