@@ -1,8 +1,8 @@
-version: '2.1'
+version: "2.1"
 setup: true
 
 orbs:
-  dynamic: bjd2385/dynamic-continuation@3.8.2
+  dynamic: bjd2385/dynamic-continuation@3.9.1
 
 workflows:
   build:
