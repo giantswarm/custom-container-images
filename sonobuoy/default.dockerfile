@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 sonobuoy/sonobuoy:v0.57.1
+FROM --platform=linux/amd64 sonobuoy/sonobuoy:v0.57.2
 
 FROM quay.io/giantswarm/alpine:3.14.0-giantswarm
 

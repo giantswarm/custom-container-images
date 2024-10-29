@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 alpine:3.20.2
+FROM --platform=linux/amd64 alpine:3.20.3
 
 RUN addgroup -g 1000 -S giantswarm && adduser -u 1000 -S giantswarm -G giantswarm
 
