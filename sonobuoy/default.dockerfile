@@ -1,6 +1,6 @@
 FROM --platform=linux/amd64 sonobuoy/sonobuoy:v0.57.2
 
-FROM quay.io/giantswarm/alpine:3.14.0-giantswarm
+FROM gsoci.azurecr.io/giantswarm/alpine:3.14.0-giantswarm
 
 
 COPY --from=0 /sonobuoy /sonobuoy
