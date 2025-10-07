@@ -11,3 +11,7 @@ add-new-image.sh @giantswarm/team-honeybadger
 
 module-a @giantswarm/team-honeybadger
 module-b @giantswarm/team-honeybadger
+
+.circleci/yamllint.yml @giantswarm/team-honeybadger
+yamllint/default.dockerfile @giantswarm/team-honeybadger
+yamllint/requirements.txt @giantswarm/team-honeybadger

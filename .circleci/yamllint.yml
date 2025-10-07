@@ -1,0 +1,19 @@
+version: 2.1
+orbs:
+  architect: giantswarm/architect@6.7.0
+workflows:
+  build-yamllint-default:
+    jobs:
+      - architect/push-to-registries:
+          context: architect
+          name: push-to-registries
+          git-tag-prefix: yamllint
+          tag-suffix: ""
+          image: giantswarm/yamllint
+          dockerfile: ./yamllint/default.dockerfile
+          build-context: yamllint
+          filters:
+            tags:
+              only: "/^yamllint.*/"
+            branches:
+              ignore: main
