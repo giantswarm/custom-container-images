@@ -78,3 +78,18 @@ workflows:
               only: "/^alpine-python3.*/"
             branches:
               ignore: "main"
+  build-alpine-bats:
+    jobs:
+      - architect/push-to-registries:
+          context: architect
+          name: push-to-registries
+          git-tag-prefix: alpine-bats
+          tag-suffix: -bats
+          image: giantswarm/alpine
+          dockerfile: ./alpine/bats.dockerfile
+          build-context: alpine
+          filters:
+            tags:
+              only: "/^alpine-bats.*/"
+            branches:
+              ignore: "main"
