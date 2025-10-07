@@ -26,7 +26,6 @@ This is a mono-repository for building custom container images from upstream ima
 
 ### Dockerfile Best Practices
 
-- Always use `--platform=linux/amd64` in FROM statements
 - Pin base image versions with specific tags or SHA256 hashes
 - Keep Dockerfiles minimal and focused
 - Follow security best practices (non-root users, minimal attack surface)
