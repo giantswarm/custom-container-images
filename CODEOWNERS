@@ -1,5 +1,7 @@
 .circleci/config.yml @giantswarm/team-honeybadger
 
+alpine/bats.dockerfile @giantswarm/team-honeybadger
+
 ./circleci/apache2-utils.yml @giantswarm/team-honeybadger
 apache2-utils @giantswarm/team-honeybadger
 
