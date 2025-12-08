@@ -1,15 +1,16 @@
 version: 2.1
 orbs:
-  architect: giantswarm/architect@5.8.0
+  architect: giantswarm/architect@6.9.0
 
 workflows:
   build-apache2-utils-default:
     jobs:
-      - architect/push-to-registries:
+      - architect/push-to-registries-multiarch:
           context: architect
           name: push-to-registries
           git-tag-prefix: apache2-utils
           image: giantswarm/apache2-utils
+          platforms: "linux/amd64,linux/arm64"
           dockerfile: ./apache2-utils/default.dockerfile
           build-context: apache2-utils
           filters:
