@@ -16,11 +16,14 @@ Use these environment variables to configure the execution of `claude`.
 
 | Variable | Default | CLI flag | Description |
 |----------|---------|----------|-------------|
-| `CLAUDE_MODEL` | `claude-haiku-4-5-20251001` | `--model` | Model to use |
-| `CLAUDE_MAX_TURNS` | `10` | `--max-turns` | Maximum agentic turns |
+| `CLAUDE_PROMPT` | **(required)** | positional | The prompt to send to Claude |
+| `CLAUDE_ALLOWED_TOOLS` | *(empty)* | `--allowedTools` | Comma-separated list of allowed tools |
 | `CLAUDE_MAX_BUDGET` | `0.20` | `--max-budget-usd` | Maximum spend in USD |
+| `CLAUDE_MAX_TURNS` | `10` | `--max-turns` | Maximum agentic turns |
+| `CLAUDE_MODEL` | `claude-haiku-4-5-20251001` | `--model` | Model to use |
+| `CLAUDE_OUTPUT_FORMAT` | `stream-json` | `--output-format` | Output format (`text`, `json`, `stream-json`) |
+| `CLAUDE_TOOLS` | `default` | `--tools` | Available tools (`default`, `""`, or tool names) |
 | `CLAUDE_VERBOSE` | `1` | `--verbose` | Verbose logging (`1` = on, `0` = off) |
-| `CLAUDE_OUTPUT_FORMAT` | `json` | `--output-format` | Output format (`text`, `json`, `stream-json`) |
 
 Any additional arguments passed to the container are forwarded directly to `claude`.
 
