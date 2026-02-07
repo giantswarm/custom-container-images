@@ -1,6 +1,6 @@
 # Custom image build mono repository
 
-This is a mono repository designed to build custom container images from upstream images.
+This is a mono repository designed to build custom container images from upstream images or software packages.
 
 Each folder within the repository is a module for a given upstream image that can contain multiple flavours of that image.
 
