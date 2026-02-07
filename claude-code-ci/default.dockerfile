@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 node:24-alpine
+FROM --platform=linux/amd64 node:24.13.0-alpine3.23
 
 RUN apk add --no-cache \
     bash \
@@ -18,11 +18,14 @@ RUN apk add --no-cache \
     rsync \
     shellcheck
 
-# Install current Claude Code globally
-RUN npm install -g @anthropic-ai/claude-code
+# Install Claude Code globally
+RUN npm install -g @anthropic-ai/claude-code@2.1.36
 
 # Install Python tools
-RUN pip3 install --break-system-packages uv tldr
+RUN pip3 install \
+  --break-system-packages \
+  uv==0.10.0 \
+  tldr==3.4.4
 
 # Create a non-root user
 RUN adduser -s bash -D user
