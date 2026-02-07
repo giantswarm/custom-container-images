@@ -24,6 +24,8 @@ Use these environment variables to configure the execution of `claude`.
 
 Any additional arguments passed to the container are forwarded directly to `claude`.
 
+Depending on the use, you might have to permit specific tool use via the `--allowedTools` flag.
+
 ## Testing
 
 `$TAG` must be an existing tag.
@@ -79,7 +81,9 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: >
+          args: |
+            --allowedTools "Edit(/github/workspace/CHANGELOG.md)" \
+            --allowedTools "Bash(git *)" \
             "You are executed in a Github action runner, in the context of a pull request.
             Environment variables give you information about the repository etc.
             You have the gh CLI available.
