@@ -7,6 +7,7 @@ CLAUDE_MAX_TURNS="${CLAUDE_MAX_TURNS:-10}"
 CLAUDE_MODEL="${CLAUDE_MODEL:-claude-haiku-4-5-20251001}"
 CLAUDE_OUTPUT_FORMAT="${CLAUDE_OUTPUT_FORMAT:-stream-json}"
 CLAUDE_TOOLS="${CLAUDE_TOOLS:-default}"
+CLAUDE_ALLOWED_TOOLS="${CLAUDE_ALLOWED_TOOLS:-}"
 CLAUDE_VERBOSE="${CLAUDE_VERBOSE:-1}"
 
 # test if CLAUDE_PROMPT is set, otherwise exit with an error
@@ -16,6 +17,7 @@ if [ -z "${CLAUDE_PROMPT:-}" ]; then
 fi
 
 args=(
+    --allowedTools "$CLAUDE_ALLOWED_TOOLS"
     --max-budget-usd "$CLAUDE_MAX_BUDGET"
     --max-turns "$CLAUDE_MAX_TURNS"
     --model "$CLAUDE_MODEL"
