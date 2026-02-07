@@ -17,7 +17,6 @@ if [ -z "${CLAUDE_PROMPT:-}" ]; then
 fi
 
 args=(
-    --allowedTools "$CLAUDE_ALLOWED_TOOLS"
     --max-budget-usd "$CLAUDE_MAX_BUDGET"
     --max-turns "$CLAUDE_MAX_TURNS"
     --model "$CLAUDE_MODEL"
@@ -26,6 +25,14 @@ args=(
     --print
     --tools "$CLAUDE_TOOLS"
 )
+
+if [ -n "$CLAUDE_ALLOWED_TOOLS" ]; then
+  IFS=',' read -ra ALLOWED <<< "$CLAUDE_ALLOWED_TOOLS"
+  for tool in "${ALLOWED[@]}"; do
+    tool="$(echo "$tool" | xargs)"  # trim whitespace
+    args+=(--allowedTools "$tool")
+  done
+fi
 
 if [ "$CLAUDE_VERBOSE" = "1" ]; then
     args+=(--verbose)
