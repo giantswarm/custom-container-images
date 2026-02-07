@@ -16,7 +16,7 @@ fi
 
 args=(
     --print
-    --allow-dangerously-skip-permissions
+    --permission-mode "dontAsk"
     --model "$CLAUDE_MODEL"
     --max-turns "$CLAUDE_MAX_TURNS"
     --max-budget-usd "$CLAUDE_MAX_BUDGET"
