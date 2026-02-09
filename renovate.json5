@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    // Base config - https://github.com/giantswarm/renovate-presets/blob/main/default.json5
+    "github>giantswarm/renovate-presets:default.json5",
+  ],
+
+  // Group all dependency updates per module directory into a single PR.
+  // This ensures a Renovate PR never spans multiple modules.
+  "packageRules": [
+    {
+      "matchFileNames": ["yamllint/**"],
+      "groupName": "yamllint",
+      "additionalBranchPrefix": "yamllint/",
+    },
+  ],
+}
