@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 ubuntu/squid:5.6-22.10_beta@sha256:341611dd7eb3b2905e1d2e0cf1936606625dcab4085baf7cc4ae21c490670ac0
+FROM --platform=linux/amd64 ubuntu/squid:5.6-22.10_beta@sha256:6c45354bab858078ce404e942b8a31a4d295027eb0fea35a42ca8b40c02f1d4e
 
 RUN sed -i '/^acl SSL_ports port 443/a acl SSL_ports port 6443' /etc/squid/squid.conf
 
