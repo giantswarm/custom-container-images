@@ -9,6 +9,87 @@
   // This ensures a Renovate PR never spans multiple modules.
   "packageRules": [
     {
+      "description": "Group updates per module directory",
+      "matchFileNames": ["alpine/**"],
+      "groupName": "alpine",
+      "additionalBranchPrefix": "alpine/",
+    },
+    {
+      "matchFileNames": ["alpinegit/**"],
+      "groupName": "alpinegit",
+      "additionalBranchPrefix": "alpinegit/",
+    },
+    {
+      "matchFileNames": ["apache2-utils/**"],
+      "groupName": "apache2-utils",
+      "additionalBranchPrefix": "apache2-utils/",
+    },
+    {
+      "matchFileNames": ["awscli-tar/**"],
+      "groupName": "awscli-tar",
+      "additionalBranchPrefix": "awscli-tar/",
+    },
+    {
+      "matchFileNames": ["calico-crd-installer/**"],
+      "groupName": "calico-crd-installer",
+      "additionalBranchPrefix": "calico-crd-installer/",
+    },
+    {
+      "matchFileNames": ["calicoctl/**"],
+      "groupName": "calicoctl",
+      "additionalBranchPrefix": "calicoctl/",
+    },
+    {
+      "matchFileNames": ["claude-code-ci/**"],
+      "groupName": "claude-code-ci",
+      "additionalBranchPrefix": "claude-code-ci/",
+    },
+    {
+      "matchFileNames": ["eventrouter/**"],
+      "groupName": "eventrouter",
+      "additionalBranchPrefix": "eventrouter/",
+    },
+    {
+      "matchFileNames": ["fluent-bit/**"],
+      "groupName": "fluent-bit",
+      "additionalBranchPrefix": "fluent-bit/",
+    },
+    {
+      "matchFileNames": ["hyperkube/**"],
+      "groupName": "hyperkube",
+      "additionalBranchPrefix": "hyperkube/",
+    },
+    {
+      "matchFileNames": ["kube-apiserver/**"],
+      "groupName": "kube-apiserver",
+      "additionalBranchPrefix": "kube-apiserver/",
+    },
+    {
+      "matchFileNames": ["mysql/**"],
+      "groupName": "mysql",
+      "additionalBranchPrefix": "mysql/",
+    },
+    {
+      "matchFileNames": ["node-exporter/**"],
+      "groupName": "node-exporter",
+      "additionalBranchPrefix": "node-exporter/",
+    },
+    {
+      "matchFileNames": ["sonobuoy/**"],
+      "groupName": "sonobuoy",
+      "additionalBranchPrefix": "sonobuoy/",
+    },
+    {
+      "matchFileNames": ["squid/**"],
+      "groupName": "squid",
+      "additionalBranchPrefix": "squid/",
+    },
+    {
+      "matchFileNames": ["vpa-certgen-ci-images/**"],
+      "groupName": "vpa-certgen-ci-images",
+      "additionalBranchPrefix": "vpa-certgen-ci-images/",
+    },
+    {
       "matchFileNames": ["yamllint/**"],
       "groupName": "yamllint",
       "additionalBranchPrefix": "yamllint/",
