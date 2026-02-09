@@ -9,9 +9,107 @@
   // This ensures a Renovate PR never spans multiple modules.
   "packageRules": [
     {
+      "description": "Group updates per module directory",
+      "matchFileNames": ["alpine/**"],
+      "groupName": "alpine dependencies",
+      "additionalBranchPrefix": "alpine/",
+      "commitMessagePrefix": "alpine:",
+    },
+    {
+      "matchFileNames": ["alpinegit/**"],
+      "groupName": "alpinegit dependencies",
+      "additionalBranchPrefix": "alpinegit/",
+      "commitMessagePrefix": "alpinegit:",
+    },
+    {
+      "matchFileNames": ["apache2-utils/**"],
+      "groupName": "apache2-utils dependencies",
+      "additionalBranchPrefix": "apache2-utils/",
+      "commitMessagePrefix": "apache2-utils:",
+    },
+    {
+      "matchFileNames": ["awscli-tar/**"],
+      "groupName": "awscli-tar dependencies",
+      "additionalBranchPrefix": "awscli-tar/",
+      "commitMessagePrefix": "awscli-tar:",
+    },
+    {
+      "matchFileNames": ["calico-crd-installer/**"],
+      "groupName": "calico-crd-installer dependencies",
+      "additionalBranchPrefix": "calico-crd-installer/",
+      "commitMessagePrefix": "calico-crd-installer:",
+    },
+    {
+      "matchFileNames": ["calicoctl/**"],
+      "groupName": "calicoctl dependencies",
+      "additionalBranchPrefix": "calicoctl/",
+      "commitMessagePrefix": "calicoctl:",
+    },
+    {
+      "matchFileNames": ["claude-code-ci/**"],
+      "groupName": "claude-code-ci dependencies",
+      "additionalBranchPrefix": "claude-code-ci/",
+      "commitMessagePrefix": "claude-code-ci:",
+    },
+    {
+      "matchFileNames": ["eventrouter/**"],
+      "groupName": "eventrouter dependencies",
+      "additionalBranchPrefix": "eventrouter/",
+      "commitMessagePrefix": "eventrouter:",
+    },
+    {
+      "matchFileNames": ["fluent-bit/**"],
+      "groupName": "fluent-bit dependencies",
+      "additionalBranchPrefix": "fluent-bit/",
+      "commitMessagePrefix": "fluent-bit:",
+    },
+    {
+      "matchFileNames": ["hyperkube/**"],
+      "groupName": "hyperkube dependencies",
+      "additionalBranchPrefix": "hyperkube/",
+      "commitMessagePrefix": "hyperkube:",
+    },
+    {
+      "matchFileNames": ["kube-apiserver/**"],
+      "groupName": "kube-apiserver dependencies",
+      "additionalBranchPrefix": "kube-apiserver/",
+      "commitMessagePrefix": "kube-apiserver:",
+    },
+    {
+      "matchFileNames": ["mysql/**"],
+      "groupName": "mysql dependencies",
+      "additionalBranchPrefix": "mysql/",
+      "commitMessagePrefix": "mysql:",
+    },
+    {
+      "matchFileNames": ["node-exporter/**"],
+      "groupName": "node-exporter dependencies",
+      "additionalBranchPrefix": "node-exporter/",
+      "commitMessagePrefix": "node-exporter:",
+    },
+    {
+      "matchFileNames": ["sonobuoy/**"],
+      "groupName": "sonobuoy dependencies",
+      "additionalBranchPrefix": "sonobuoy/",
+      "commitMessagePrefix": "sonobuoy:",
+    },
+    {
+      "matchFileNames": ["squid/**"],
+      "groupName": "squid dependencies",
+      "additionalBranchPrefix": "squid/",
+      "commitMessagePrefix": "squid:",
+    },
+    {
+      "matchFileNames": ["vpa-certgen-ci-images/**"],
+      "groupName": "vpa-certgen-ci-images dependencies",
+      "additionalBranchPrefix": "vpa-certgen-ci-images/",
+      "commitMessagePrefix": "vpa-certgen-ci-images:",
+    },
+    {
       "matchFileNames": ["yamllint/**"],
-      "groupName": "yamllint",
+      "groupName": "yamllint dependencies",
       "additionalBranchPrefix": "yamllint/",
+      "commitMessagePrefix": "yamllint:",
     },
   ],
 }
