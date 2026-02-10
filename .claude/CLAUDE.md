@@ -28,7 +28,7 @@ This is a mono-repository for building custom container images from upstream ima
 ### CircleCI Configuration
 
 - Each workflow must be named `build-<upstream-image>-<flavour>`
-- Use the architect orb: `giantswarm/architect@5.8.0`
+- Use the architect orb: `giantswarm/architect@5.8.0` or later
 - Required filters for all workflows:
   ```yaml
   filters:
