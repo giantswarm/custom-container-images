@@ -1,8 +1,8 @@
-FROM --platform=linux/amd64 quay.io/calico/kube-controllers:v3.28.2
+FROM --platform=linux/amd64 quay.io/calico/kube-controllers:v3.31.4
 
 FROM gsoci.azurecr.io/giantswarm/crd-installer:0.2.2 AS installer
 
-FROM gsoci.azurecr.io/giantswarm/alpine:3.15.0 AS downloader
+FROM gsoci.azurecr.io/giantswarm/alpine:3.23.3 AS downloader
 
 WORKDIR /tmp/crd-installer
 
