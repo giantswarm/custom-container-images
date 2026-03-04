@@ -5,6 +5,9 @@ alpine/bats.dockerfile @giantswarm/team-honeybadger
 ./circleci/apache2-utils.yml @giantswarm/team-honeybadger
 apache2-utils @giantswarm/team-honeybadger
 
+.circleci/claude-code-ci.yml @giantswarm/team-honeybadger
+claude-code-ci/default.dockerfile @giantswarm/team-honeybadger
+
 .gitignore @giantswarm/team-honeybadger
 README.md @giantswarm/team-honeybadger
 add-new-image.sh @giantswarm/team-honeybadger

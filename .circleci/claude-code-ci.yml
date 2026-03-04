@@ -1,0 +1,20 @@
+version: 2.1
+orbs:
+  architect: giantswarm/architect@6.12.0
+
+workflows:
+  build-claude-code-ci-default:
+    jobs:
+      - architect/push-to-registries:
+          context: architect
+          name: push-to-registries
+          git-tag-prefix: claude-code-ci
+          tag-suffix: ""
+          image: giantswarm/claude-code-ci
+          dockerfile: ./claude-code-ci/default.dockerfile
+          build-context: claude-code-ci
+          filters:
+            tags:
+              only: "/^claude-code-ci.*/"
+            branches:
+              ignore: main
