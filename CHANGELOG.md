@@ -13,7 +13,7 @@ We use dates instead of semantic versions.
 
 ### Changed
 
-- Upgraded Python dependencies in `docs-scriptrunner` and `claude-code-ci` images
+- Upgraded Python dependencies in `docs-scriptrunner` image
 
 ## 2026-02-07
 
