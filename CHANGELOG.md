@@ -11,6 +11,10 @@ We use dates instead of semantic versions.
 
 - `docs-scriptrunner` image migrated from giantswarm/docs-scriptrunner repository
 
+### Changed
+
+- Upgraded Python dependencies in `docs-scriptrunner` and `claude-code-ci` images
+
 ## 2026-02-07
 
 ### Added

@@ -24,7 +24,7 @@ RUN npm install -g @anthropic-ai/claude-code@2.1.36
 # Install Python tools
 RUN pip3 install \
   --break-system-packages \
-  uv==0.10.0 \
+  uv==0.10.12 \
   tldr==3.4.4
 
 # Create a non-root user

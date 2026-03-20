@@ -11,16 +11,15 @@ RUN apk --no-cache add \
 ENV PYTHONUNBUFFERED=yes
 
 RUN pip install --no-cache-dir \
-        click==8.1.7 \
-        colored==2.2.3 \
-        GitPython==3.1.40 \
-        PyGithub==2.1.1 \
-        requests==2.26.0 \
-        markdown==3.3.6 \
-        html2text==2020.1.16 \
-        python-dateutil==2.8.2 \
-        python-frontmatter==1.0.1 \
-    && pip install \
-        --global-option='--with-libyaml' PyYAML==6.0.1
+        click==8.3.1 \
+        colored==2.3.1 \
+        GitPython==3.1.46 \
+        PyGithub==2.8.1 \
+        requests==2.32.5 \
+        markdown==3.10.2 \
+        html2text==2025.4.15 \
+        python-dateutil==2.9.0.post0 \
+        python-frontmatter==1.1.0 \
+        PyYAML==6.0.3
 
 ENTRYPOINT ["python3"]
