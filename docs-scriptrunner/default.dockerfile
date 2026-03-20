@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 gsoci.azurecr.io/giantswarm/python:3.12.0-alpine3.18
+FROM --platform=linux/amd64 gsoci.azurecr.io/giantswarm/python:3.14-alpine3.23
 
 RUN apk --no-cache add \
     build-base \
