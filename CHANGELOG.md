@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 We use dates instead of semantic versions.
 
+## 2026-03-20
+
+### Added
+
+- `docs-scriptrunner` image migrated from giantswarm/docs-scriptrunner repository
+
 ## 2026-02-07
 
 ### Added

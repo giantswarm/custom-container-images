@@ -1,0 +1,19 @@
+version: 2.1
+orbs:
+  architect: giantswarm/architect@5.8.0
+workflows:
+  build-docs-scriptrunner-default:
+    jobs:
+      - architect/push-to-registries:
+          context: architect
+          name: push-to-registries
+          git-tag-prefix: docs-scriptrunner
+          tag-suffix: ""
+          image: giantswarm/docs-scriptrunner
+          dockerfile: ./docs-scriptrunner/default.dockerfile
+          build-context: docs-scriptrunner
+          filters:
+            tags:
+              only: "/^docs-scriptrunner.*/"
+            branches:
+              ignore: main
