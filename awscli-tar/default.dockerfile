@@ -1,3 +1,3 @@
-FROM --platform=linux/amd64 amazon/aws-cli:2.7.35@sha256:e5988c45f13ec9c9500e9fb6742e19de642a5bdc2750f2cc0482a857f13c30ea
+FROM --platform=linux/amd64 amazon/aws-cli:2.34.29@sha256:a21c9fdf2ae8427b79d93d5a618aea12068da4864bd58072fa5436fd0ca9539d
 
 RUN yum -y install tar
