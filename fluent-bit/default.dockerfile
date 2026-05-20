@@ -1,6 +1,6 @@
-FROM --platform=linux/amd64 fluent/fluent-bit:1.9.8@sha256:137669ee97787c930ec00a8babff46ecc76988d128cc9e7fa581d1b05ef8fb3d
+FROM --platform=linux/amd64 fluent/fluent-bit:1.9.10@sha256:b33d4bf7f7b870777c1f596bc33d6d347167d460bc8cc6aa50fddcbedf7bede5
 
-FROM fluent/fluent-bit:1.9.8
+FROM fluent/fluent-bit:1.9.10
 
 COPY --from=amazon/aws-for-fluent-bit:latest /fluent-bit/kinesis.so /fluent-bit/kinesis.so
 COPY --from=amazon/aws-for-fluent-bit:latest /fluent-bit/firehose.so /fluent-bit/firehose.so
