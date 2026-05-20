@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 alpine:3.23.3
+FROM --platform=linux/amd64 alpine:3.23.4
 
 RUN apk add --no-cache ca-certificates
 
