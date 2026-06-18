@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 node:24.13.0-alpine3.23
+FROM --platform=linux/amd64 node:24.17.0-alpine3.23
 
 RUN apk add --no-cache \
     bash \
