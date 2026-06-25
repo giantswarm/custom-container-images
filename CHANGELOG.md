@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 We use dates instead of semantic versions.
 
+## 2026-06-25
+
+### Changed
+
+- Replaced kratix-based examples in `README.md` and `add-new-image.sh` usage with neutral examples, as kratix is being removed (giantswarm/giantswarm#36422).
+
 ## 2026-03-20
 
 ### Added

@@ -42,7 +42,7 @@ We want a custom image for `nginx`:
 You can use the `add-new-image.sh` script to generate new modules. For example:
 
 ```shell
-./add-new-image.sh -o "@giantswarm/team-honeybadger" -i "kratix" -f "yq" -b "gsoci.azurecr.io/giantswarm/kratix-base-cli:0.1.0"
+./add-new-image.sh -o "@giantswarm/team-honeybadger" -i "alpine" -f "yq" -b "quay.io/alpine:3.16.2"
 ```
 
 # How to work with this repository?
