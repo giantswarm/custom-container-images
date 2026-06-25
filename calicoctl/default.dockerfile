@@ -1,6 +1,6 @@
-FROM --platform=linux/amd64 quay.io/calico/ctl:v3.27.4
+FROM --platform=linux/amd64 quay.io/calico/ctl:v3.32.1
 
-FROM gsoci.azurecr.io/giantswarm/alpine:3.13.5
+FROM gsoci.azurecr.io/giantswarm/alpine:3.24.1
 
 COPY --from=0 /calicoctl /calicoctl
 
