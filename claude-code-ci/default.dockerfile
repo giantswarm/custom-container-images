@@ -8,6 +8,8 @@ RUN apk add --no-cache \
     wget \
     python3 \
     py3-pip \
+    py3-yaml \
+    kubectl \
     build-base \
     jq \
     ripgrep \
