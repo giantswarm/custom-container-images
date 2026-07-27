@@ -15,6 +15,7 @@ We use dates instead of semantic versions.
 
 - Upgraded Python dependencies in `docs-scriptrunner` image
 - Upgraded `docs-scriptrunner` base image from Python 3.12.0-alpine3.18 to 3.14-alpine3.23
+- Added `py3-yaml` and `kubectl` packages to `claude-code-ci` image.
 
 ## 2026-02-07
 
