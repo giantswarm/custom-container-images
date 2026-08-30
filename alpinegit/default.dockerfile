@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 alpine/git:v2.26.2@sha256:7b94cd6038bf3f5ddd7b1d99b9591f243e6484417bc5fb8fa7fdbc076e904794
+FROM --platform=linux/amd64 alpine/git:v2.54.0@sha256:4f9488b7295baec153a9953479690f835ad4699b1d9f11e3897a4485c224fc3e
 
 RUN apk add --no-cache ca-certificates
 
