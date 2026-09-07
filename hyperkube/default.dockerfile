@@ -1,6 +1,6 @@
-FROM --platform=linux/amd64 registry.k8s.io/kube-apiserver:v1.30.4
+FROM --platform=linux/amd64 registry.k8s.io/kube-apiserver:v1.37.0
 
-FROM gsoci.azurecr.io/giantswarm/alpine:3.12.1 AS downloader
+FROM gsoci.azurecr.io/giantswarm/alpine:3.24.1 AS downloader
 
 WORKDIR /tmp/hyperkube
 
