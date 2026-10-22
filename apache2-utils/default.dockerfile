@@ -1,4 +1,4 @@
-FROM gsoci.azurecr.io/giantswarm/alpine:3.24.1
+FROM gsoci.azurecr.io/giantswarm/alpine:3.24.3
 
 RUN apk add apache2-utils=2.4.67-r0
 
