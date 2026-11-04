@@ -18,11 +18,13 @@ FROM gsoci.azurecr.io/giantswarm/alpine:3.24.3
 
 RUN apk add --no-cache bash ca-certificates coreutils curl diffutils findutils gawk git grep gzip jq libgcc libstdc++ procps-ng python3 sed tar tini which \
  && addgroup -g 1000 node \
- && adduser -D -u 1000 -G node -h /home/node -s /bin/bash node
+ && adduser -D -u 1000 -G node -h /home/node -s /bin/bash node \
+ && install -d -m 0755 /etc/claude-code
 
 COPY --from=claude /claude /usr/local/bin/claude
 COPY --chmod=0755 start.sh beam-mcp-wrap beam-mcp-headers /usr/local/bin/
 # Users can't override managed settings: no hooks, no tool reads of the secrets.
+# The directory exists first: COPY --chmod would give a new one the file's mode.
 COPY --chmod=0644 managed-settings.json /etc/claude-code/managed-settings.json
 
 ENV DISABLE_AUTOUPDATER=1 \
