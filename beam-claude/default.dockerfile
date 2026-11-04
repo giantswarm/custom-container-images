@@ -26,7 +26,7 @@ RUN set -eu; a=$TARGETARCH; \
     install -m 0755 "devctl-linux-$a" /out/bin/devctl; \
     install -m 0755 "kubectl-gs-linux-$a" /out/bin/kubectl-gs
 
-FROM gsoci.azurecr.io/giantswarm/beam-claude:0.2.0-slim
+FROM gsoci.azurecr.io/giantswarm/beam-claude:0.2.1-slim
 USER root
 RUN apk add --no-cache github-cli helm imagemagick kubectl make nodejs npm openssl shellcheck uv yq-go
 COPY --from=downloads /out/go /usr/local/go
