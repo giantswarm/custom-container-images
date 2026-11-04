@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Runs in the remote pod. The headersHelper of a rewritten HTTP MCP server.
+#
+# Usage: beam-mcp-headers HEADERS
+#
+# HEADERS is a base64 JSON object of header names and values. Replaces each
+# %{NAME} in the values with the content of /run/claude/secrets/NAME and
+# prints the object. A missing file gives an empty value.
+set -euo pipefail
+
+sub() {
+  local v=$1 out='' m
+  while [[ $v =~ %\{([A-Za-z_][A-Za-z0-9_]*)\} ]]; do
+    m=${BASH_REMATCH[0]}
+    out+=${v%%"$m"*}$(cat "/run/claude/secrets/${BASH_REMATCH[1]}" 2>/dev/null || true)
+    v=${v#*"$m"}
+  done
+  printf '%s' "$out$v"
+}
+
+headers='{}'
+while IFS=$'\t' read -r key value; do
+  headers=$(jq -c --arg k "$key" --arg v "$(sub "$value")" '.[$k] = $v' <<<"$headers")
+done < <(base64 -d <<<"$1" | jq -r 'to_entries[] | "\(.key)\t\(.value)"')
+printf '%s\n' "$headers"

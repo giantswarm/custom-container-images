@@ -1,0 +1,9 @@
+{
+  "disableAllHooks": true,
+  "permissions": {
+    "deny": [
+      "Read(//run/claude/**)",
+      "Edit(//run/claude/**)"
+    ]
+  }
+}
