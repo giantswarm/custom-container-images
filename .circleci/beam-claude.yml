@@ -3,18 +3,18 @@ orbs:
   architect: giantswarm/architect@6.15.0
 
 workflows:
-  build-beam-claude-default:
+  build-beam-claude-slim:
     jobs:
       - architect/push-to-registries:
           context: architect
           name: push-to-registries
-          git-tag-prefix: beam-claude
-          tag-suffix: ""
+          git-tag-prefix: beam-claude-slim
+          tag-suffix: -slim
           image: giantswarm/beam-claude
-          dockerfile: ./beam-claude/default.dockerfile
+          dockerfile: ./beam-claude/slim.dockerfile
           build-context: beam-claude
           filters:
             tags:
-              only: "/^beam-claude.*/"
+              only: "/^beam-claude-slim.*/"
             branches:
               ignore: main
