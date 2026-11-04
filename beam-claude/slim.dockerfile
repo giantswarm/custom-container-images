@@ -22,7 +22,7 @@ RUN apk add --no-cache bash ca-certificates coreutils curl diffutils findutils g
  && install -d -m 0755 /etc/claude-code
 
 COPY --from=claude /claude /usr/local/bin/claude
-COPY --chmod=0755 start.sh beam-mcp-wrap beam-mcp-headers /usr/local/bin/
+COPY --chmod=0755 start.sh beam-mcp-wrap beam-mcp-headers beam-statusline /usr/local/bin/
 # Users can't override managed settings: no hooks, no tool reads of the secrets.
 # The directory exists first: COPY --chmod would give a new one the file's mode.
 COPY --chmod=0644 managed-settings.json /etc/claude-code/managed-settings.json
