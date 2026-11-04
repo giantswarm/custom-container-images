@@ -5,6 +5,9 @@ alpine/bats.dockerfile @giantswarm/team-honeybadger
 ./circleci/apache2-utils.yml @giantswarm/team-honeybadger
 apache2-utils @giantswarm/team-honeybadger
 
+.circleci/beam-claude.yml @giantswarm/team-atlas
+beam-claude @giantswarm/team-atlas
+
 .circleci/claude-code-ci.yml @giantswarm/team-honeybadger
 claude-code-ci/default.dockerfile @giantswarm/team-honeybadger
 

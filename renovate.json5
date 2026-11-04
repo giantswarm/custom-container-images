@@ -35,6 +35,12 @@
       "commitMessagePrefix": "awscli-tar:",
     },
     {
+      "matchFileNames": ["beam-claude/**", ".circleci/beam-claude.yml"],
+      "groupName": "beam-claude dependencies",
+      "additionalBranchPrefix": "beam-claude/",
+      "commitMessagePrefix": "beam-claude:",
+    },
+    {
       "matchFileNames": ["calico-crd-installer/**", ".circleci/calico-crd-installer.yml"],
       "groupName": "calico-crd-installer dependencies",
       "additionalBranchPrefix": "calico-crd-installer/",

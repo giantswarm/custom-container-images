@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 We use dates instead of semantic versions.
 
+## 2026-11-04
+
+### Added
+
+- `beam-claude` image: Alpine with tini, the native Claude Code binary and shell tools. It runs `claude daemon run` as user 1000 with the Claude config in memory, for remote Claude Code sessions in Kubernetes.
+
 ## 2026-03-20
 
 ### Added
