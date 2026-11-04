@@ -10,6 +10,7 @@ We use dates instead of semantic versions.
 ### Added
 
 - `beam-claude` image: Alpine with tini, the native Claude Code binary and shell tools. It runs `claude daemon run` as user 1000 with the Claude config in memory, for remote Claude Code sessions in Kubernetes.
+- `beam-claude` image: the regular `beam-claude:<version>` image adds gh, kubectl, helm, Go, golangci-lint, make, openssl, yq, shellcheck, ImageMagick, uv, Node.js with npm, the CircleCI CLI, devctl and kubectl-gs to the `slim` image.
 
 ### Changed
 

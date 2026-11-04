@@ -3,6 +3,21 @@ orbs:
   architect: giantswarm/architect@6.15.0
 
 workflows:
+  build-beam-claude-default:
+    jobs:
+      - architect/push-to-registries:
+          context: architect
+          name: push-to-registries
+          git-tag-prefix: beam-claude
+          tag-suffix: ""
+          image: giantswarm/beam-claude
+          dockerfile: ./beam-claude/default.dockerfile
+          build-context: beam-claude
+          filters:
+            tags:
+              only: "/^beam-claude\\/v.*/"
+            branches:
+              ignore: main
   build-beam-claude-slim:
     jobs:
       - architect/push-to-registries:
