@@ -11,6 +11,12 @@ We use dates instead of semantic versions.
 
 - `beam-claude` image: Alpine with tini, the native Claude Code binary and shell tools. It runs `claude daemon run` as user 1000 with the Claude config in memory, for remote Claude Code sessions in Kubernetes.
 
+### Changed
+
+- `beam-claude` image: ships managed Claude Code settings that disable hooks and deny the Read and Edit tools on `/run/claude`.
+- `beam-claude` image: ships the `beam-mcp-wrap` and `beam-mcp-headers` helpers, which load MCP server secrets from `/run/claude/secrets`.
+- `beam-claude` image: creates `/run/claude/secrets` at start and no longer creates `~/work`.
+
 ## 2026-03-20
 
 ### Added

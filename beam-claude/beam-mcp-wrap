@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Runs in the remote pod. Starts an MCP server from its rewritten config.
+#
+# Usage: beam-mcp-wrap COMMAND [ARG]...
+#
+# Replaces each %{NAME} in the arguments and in the environment with the
+# content of /run/claude/secrets/NAME, then runs COMMAND. Only this process
+# and the server see the values. A missing file gives an empty value.
+set -euo pipefail
+
+sub() {
+  local v=$1 out='' m
+  while [[ $v =~ %\{([A-Za-z_][A-Za-z0-9_]*)\} ]]; do
+    m=${BASH_REMATCH[0]}
+    out+=${v%%"$m"*}$(cat "/run/claude/secrets/${BASH_REMATCH[1]}" 2>/dev/null || true)
+    v=${v#*"$m"}
+  done
+  printf '%s' "$out$v"
+}
+
+for name in $(compgen -e); do
+  if [[ ${!name} == *%\{* ]]; then
+    export "$name=$(sub "${!name}")"
+  fi
+done
+args=()
+for a in "$@"; do
+  args+=("$(sub "$a")")
+done
+exec "${args[@]}"
