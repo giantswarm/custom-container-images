@@ -16,6 +16,7 @@ We use dates instead of semantic versions.
 - `beam-claude` image: the image becomes the `slim` flavour, `beam-claude:<version>-slim`, built from `beam-claude/slim.dockerfile`. The regular `beam-claude:<version>` image comes back with developer tools, built on `slim`.
 - `beam-claude` `slim` image: ships managed Claude Code settings that disable hooks and deny the Read and Edit tools on `/run/claude`.
 - `beam-claude` `slim` image: ships the `beam-mcp-wrap` and `beam-mcp-headers` helpers, which load MCP server secrets from `/run/claude/secrets`.
+- `beam-claude` `slim` image: ships `beam-statusline`, a status line that shows the beam instance, model, directory, git branch and context use.
 - `beam-claude` `slim` image: creates `/run/claude/secrets` at start and no longer creates `~/work`.
 
 ## 2026-03-20
