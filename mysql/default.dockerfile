@@ -1,3 +1,3 @@
-FROM --platform=linux/amd64 mysql:5.7.14@sha256:c8f03238ca1783d25af320877f063a36dbfce0daa56a7b4955e6c6e05ab5c70b
+FROM --platform=linux/amd64 mysql:5.7.44@sha256:4bc6bc963e6d8443453676cae56536f4b8156d78bae03c0145cbe47c2aad73bb
 
 USER mysql
